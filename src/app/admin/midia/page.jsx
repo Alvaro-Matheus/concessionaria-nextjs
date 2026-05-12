@@ -31,7 +31,6 @@ export default function MidiaAdmin() {
 
         } catch (err) {
 
-
         }
 
     }
@@ -48,18 +47,22 @@ export default function MidiaAdmin() {
 
         formData.append("file", file);
 
-        const res = await fetch("/api/upload", {
-            method: "POST",
-            body: formData,
-        });
+        formData.append(
+            "upload_preset",
+            "SEU_UPLOAD_PRESET"
+        );
 
-        if (!res.ok) {
-            throw new Error("Erro upload");
-        }
+        const res = await fetch(
+            "https://api.cloudinary.com/v1_1/SEU_CLOUD_NAME/image/upload",
+            {
+                method: "POST",
+                body: formData,
+            }
+        );
 
         const data = await res.json();
 
-        return data.url;
+        return data.secure_url;
     }
 
     async function addBanner() {
