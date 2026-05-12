@@ -1,0 +1,66 @@
+.container {
+    padding: 30px;
+}
+
+.title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.deleteButton {
+    margin-top: 15px;
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 8px;
+    background: #d50000;
+    color: white;
+    font-weight: 700;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background: #b00000;
+}
+
+.card h2 {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+@media (max-width: 1000px) {
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+}

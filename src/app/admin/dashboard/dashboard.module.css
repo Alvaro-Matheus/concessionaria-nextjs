@@ -1,0 +1,149 @@
+.container {
+  padding: 30px;
+  min-height: 100vh;
+  background: #f4f6f8;
+}
+
+
+.container h1 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.addButton {
+  border: none;
+  background: #100022;
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  margin-bottom: 35px;
+
+  transition: 0.2s;
+}
+
+.addButton:hover {
+  transform: translateY(-2px);
+}
+
+.sectionTitle {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 18px;
+  margin-top: 45px;
+  color: #111;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+
+  gap: 18px;
+}
+
+.card {
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.05);
+
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0;
+  color: #111;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.edit,
+.delete,
+.sell {
+  flex: 1;
+  border: none;
+  height: 38px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit {
+  background: #100022;
+  color: white;
+  width: 70px;
+}
+
+.sell {
+  background: #0ba30b;
+  color: white;
+}
+
+.delete {
+  background: #d11a2a;
+  color: white;
+}
+
+
+.edit:hover,
+.sell:hover,
+.delete:hover {
+  opacity: 0.9;
+}
+
+
+.actions a {
+  flex: 1;
+}
+
+
+@media (max-width: 700px) {
+
+  .container {
+    padding: 15px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+}

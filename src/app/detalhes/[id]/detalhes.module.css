@@ -1,0 +1,212 @@
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.banner {
+    width: 100%;
+    background: #100022;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.banner h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.image {
+    width: 33.3%;
+    height: clamp(180px, 28vw, 420px);
+    object-fit: cover;
+    border-radius: 10px;
+    background: #ddd;
+    transition: 0.3s;
+}
+
+.image:hover {
+    transform: scale(1.01);
+}
+
+.info {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.detailItem {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: 0.2s;
+}
+
+.detailItem:hover {
+    transform: translateY(-2px);
+}
+
+.detailItem strong {
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.detailItem span {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.price {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 900;
+    color: #0a9905;
+    margin-top: 10px;
+}
+
+@media (max-width: 1000px) {
+
+    .banner h1 {
+        font-size: 34px;
+    }
+
+    .detailsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 10px;
+    }
+
+    .banner h1 {
+        font-size: 28px;
+    }
+
+    .detailsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .detailItem span {
+        font-size: 18px;
+    }
+
+    .price {
+        font-size: 34px;
+    }
+
+}
+
+.bottomSection {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.info {
+    width: 70%;
+}
+
+.interesseBox {
+    width: 30%;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.interesseBox h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.interesseBox input,
+.interesseBox textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.interesseBox textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.interesseBox button {
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background: #100022;
+    color: white;
+    font-weight: 700;
+}
+
+.sell {
+    background: #0a9905;
+    color: white;
+}
+
+.sectionTitle {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+@media (max-width: 1000px) {
+
+    .bottomSection {
+        flex-direction: column;
+    }
+
+    .info,
+    .interesseBox {
+        width: 100%;
+    }
+
+}
