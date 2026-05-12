@@ -3,21 +3,32 @@ import styles from "./detalhes.module.css";
 import InteresseForm from "./InteresseForm";
 
 async function getCarro(id) {
-    const res = await fetch(
-        `http://localhost:3000/api/cars/${id}`,
-        {
-            cache: "no-store",
-        }
-    );
+    try {
+        const baseUrl =
+            process.env.NEXT_PUBLIC_SITE_URL ||
+            "http://localhost:3000";
 
-    if (!res.ok) {
+        const res = await fetch(
+            `${baseUrl}/api/cars/${id}`,
+            {
+                cache: "no-store",
+            }
+        );
+
+        if (!res.ok) {
+            return null;
+        }
+
+        return res.json();
+
+    } catch (err) {
+        console.error(err);
         return null;
     }
-
-    return res.json();
 }
 
 export default async function Detalhes({ params }) {
+
     const { id } = await params;
 
     const carro = await getCarro(id);
@@ -56,6 +67,7 @@ export default async function Detalhes({ params }) {
                 </div>
 
                 <div className={styles.bottomSection}>
+
                     <div className={styles.info}>
 
                         <h2 className={styles.title}>
